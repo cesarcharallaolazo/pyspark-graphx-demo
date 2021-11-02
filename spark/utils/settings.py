@@ -1,0 +1,38 @@
+import os
+
+# Config Pg Database
+DB_MICROSERVICE_HOST = os.getenv('DB_MICROSERVICE_HOST', 'localhost')
+DB_MICROSERVICE_PORT = int(os.getenv('DB_MICROSERVICE_PORT', 5432))
+DB_MICROSERVICE_USERNAME = os.getenv('DB_MICROSERVICE_LOGIN', 'postgres')
+DB_MICROSERVICE_PASSWORD = os.getenv('DB_MICROSERVICE_PASSWORD', 'postgres')
+DB_MICROSERVICE_DATABASE = os.getenv('DB_MICROSERVICE_DATABASE', 'database')
+
+pg_configuration = {
+    'host': DB_MICROSERVICE_HOST,
+    'user': DB_MICROSERVICE_USERNAME,
+    'port': DB_MICROSERVICE_PORT,
+    'password': DB_MICROSERVICE_PASSWORD,
+    'database': DB_MICROSERVICE_DATABASE
+}
+
+# Config Snowflake
+DB_SNOWFLAKE_ACCOUNT = os.getenv('DB_MS_SNOWFLAKE_ACCOUNT', 'account')
+DB_SNOWFLAKE_PORT = int(os.getenv('DB_MS_SNOWFLAKE_PORT', 443))
+DB_SNOWFLAKE_USERNAME = os.getenv('DB_MS_SNOWFLAKE_USERNAME', 'username')
+DB_SNOWFLAKE_PASSWORD = os.getenv('DB_MS_SNOWFLAKE_PASSWORD', 'password')
+DB_SNOWFLAKE_DATABASE = os.getenv('DB_MS_SNOWFLAKE_DATABASE', 'database')
+DB_SNOWFLAKE_HOST = os.getenv('DB_MS_SNOWFLAKE_HOST', 'host')
+DB_SNOWFLAKE_WAREHOUSE = os.getenv('DB_MS_SNOWFLAKE_WAREHOUSE', 'warehouse')
+DB_SNOWFLAKE_ROLE = os.getenv('DB_MS_SNOWFLAKE_ROLE', 'role')
+
+sfOptions = {
+    "sfURL": DB_SNOWFLAKE_HOST,
+    "sfAccount": DB_SNOWFLAKE_ACCOUNT,
+    "sfUser": DB_SNOWFLAKE_USERNAME,
+    "sfPassword": DB_SNOWFLAKE_PASSWORD,
+    "sfDatabase": DB_SNOWFLAKE_DATABASE,
+    "sfWarehouse": DB_SNOWFLAKE_WAREHOUSE,
+    "sfRole": DB_SNOWFLAKE_ROLE
+}
+
+SLACK_URL = os.getenv('ALERT_SLACK_URL', 'slack_url')
